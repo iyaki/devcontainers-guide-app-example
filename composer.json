@@ -1,0 +1,5 @@
+{
+    "require": {
+        "kylelamse/is-even": "^1.0"
+    }
+}

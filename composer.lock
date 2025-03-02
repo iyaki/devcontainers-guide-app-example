@@ -1,0 +1,61 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "4d8f58df99b4a9640bb6bcf50ad57471",
+    "packages": [
+        {
+            "name": "kylelamse/is-even",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/kyle.lamse/is-even.git",
+                "reference": "3b6cb6897c5e3edc0137e8760beb2e14094140a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/kyle%2Elamse%2Fis-even/repository/archive.zip?sha=3b6cb6897c5e3edc0137e8760beb2e14094140a1",
+                "reference": "3b6cb6897c5e3edc0137e8760beb2e14094140a1",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/is-even.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Lamse",
+                    "email": "kylelamse29@gmail.com"
+                }
+            ],
+            "description": "Determines if a given value is even.",
+            "keywords": [
+                "even",
+                "is-even",
+                "is-odd",
+                "odd"
+            ],
+            "time": "2019-08-31T04:57:01+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+}
