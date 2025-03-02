@@ -15,10 +15,10 @@
 	"forwardPorts": [8080],
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": {}
-	}
+	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
+	"postCreateCommand": "pecl install xdebug && docker-php-ext-enable xdebug"
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
