@@ -18,7 +18,10 @@
 		"ghcr.io/devcontainers/features/git:1": {}
 	},
 
-	"postCreateCommand": "pecl install xdebug && docker-php-ext-enable xdebug"
+	"postCreateCommand": {
+		"install xdebug": "pecl install xdebug && docker-php-ext-enable xdebug",
+		"install composer": ".devcontainer/composer.sh"
+	}
 
 	// Configure tool-specific properties.
 	// "customizations": {},
