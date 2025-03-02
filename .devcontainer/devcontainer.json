@@ -21,8 +21,22 @@
 	"postCreateCommand": {
 		"install xdebug": "pecl install xdebug && docker-php-ext-enable xdebug",
 		"install composer": ".devcontainer/composer.sh"
-	}
+	},
 
-	// Configure tool-specific properties.
-	// "customizations": {},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"files.eol": "\n",
+				"files.trimFinalNewlines": true,
+				"intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true,
+				"intelephense.completion.triggerParameterHints": true,
+				"intelephense.environment.shortOpenTag": false,
+				"php.suggest.basic": false
+			},
+			"extensions": [
+				"bmewburn.vscode-intelephense-client",
+				"xdebug.php-debug"
+			]
+		}
+	}
 }
