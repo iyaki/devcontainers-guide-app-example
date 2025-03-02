@@ -18,7 +18,9 @@
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pecl install xdebug && docker-php-ext-enable xdebug"
+	"postCreateCommand": "pecl install xdebug && docker-php-ext-enable xdebug",
+
+	"postStartCommand": "php -S 0.0.0.0:8080 -t public/"
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
