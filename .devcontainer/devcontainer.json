@@ -3,7 +3,12 @@
 {
 	"name": "PHP",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "php:8.4-cli-bullseye",
+	"image": "dunglas/frankenphp:1-php8.4",
+
+	"overrideCommand": false,
+
+	"workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached",
+	"workspaceFolder": "/app",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -13,14 +18,18 @@
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [8080],
+
+	"containerEnv": {
+		"SERVER_NAME": "http://localhost:8080",
+		"CADDY_GLOBAL_OPTIONS": "auto_https off" // Disable automatic HTTPS
+	},
+
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": {}
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pecl install xdebug && docker-php-ext-enable xdebug",
-
-	"postStartCommand": "php -S 0.0.0.0:8080 -t public/"
+	"postCreateCommand": "pecl install xdebug && docker-php-ext-enable xdebug"
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
