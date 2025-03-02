@@ -1,6 +1,8 @@
 {
 	"name": "Helloer",
-	"image": "dunglas/frankenphp:1-php8.4",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
 
 	"overrideCommand": false,
 
@@ -12,15 +14,6 @@
 	"containerEnv": {
 		"SERVER_NAME": "http://localhost:8080",
 		"CADDY_GLOBAL_OPTIONS": "auto_https off" // Disable automatic HTTPS
-	},
-
-	"features": {
-		"ghcr.io/devcontainers/features/git:1": {}
-	},
-
-	"postCreateCommand": {
-		"install xdebug": "pecl install xdebug && docker-php-ext-enable xdebug",
-		"install composer": ".devcontainer/composer.sh"
 	},
 
 	"customizations": {
