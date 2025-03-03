@@ -1,20 +1,11 @@
 {
 	"name": "Helloer",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
 
-	"overrideCommand": false,
-
-	"workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached",
+	"dockerComposeFile": "compose.yaml",
+	"service": "app",
 	"workspaceFolder": "/app",
 
 	"forwardPorts": [8080],
-
-	"containerEnv": {
-		"SERVER_NAME": "http://localhost:8080",
-		"CADDY_GLOBAL_OPTIONS": "auto_https off" // Disable automatic HTTPS
-	},
 
 	"customizations": {
 		"vscode": {
