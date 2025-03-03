@@ -1,3 +1,9 @@
+x-db-default-params: &db-default-params
+  MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-SUPER_SECRET_ROOT_PASSWORD}
+  MARIADB_DATABASE: ${DB_DATABASE:-helloer}
+  MARIADB_USER: ${DB_USER:-app_user}
+  MARIADB_PASSWORD: ${DB_PASSWORD:-SUPER_SECRET_PASSWORD}
+
 services:
 
   app:
@@ -10,10 +16,20 @@ services:
       - caddy_data:/data
       - caddy_config:/config
     environment:
+      <<: *db-default-params
       SERVER_NAME: "${SERVER_NAME:-http://localhost:8080}"
       CADDY_GLOBAL_OPTIONS: "auto_https off"
     tty: true
 
+  db:
+    image: mariadb:11.4-noble
+    restart: unless-stopped
+    volumes:
+      - mariadb:/var/lib/mysql
+    environment:
+      <<: *db-default-params
+
 volumes:
   caddy_data:
   caddy_config:
+  mariadb:
